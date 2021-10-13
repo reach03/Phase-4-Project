@@ -1,14 +1,20 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4f84621aeff1afcece7f4ba4557a44632bc1003d
 /tmp
 /out-tsc
 # Only exists if Bazel was run
 /bazel-out
 
 # dependencies
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4f84621aeff1afcece7f4ba4557a44632bc1003d
 
 # profiling files
 chrome-profiler-events*.json
