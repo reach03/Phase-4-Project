@@ -1,0 +1,45 @@
+
+<div class="jumbotron">
+
+	<div class="form-group" >
+
+             <p align="center">
+        <div *ngIf="currentQuiz < 10" >
+        <p class="text-center"> Question {{currentQuiz+1}} of {{questions.length}}</p>
+		<div class="col-sm-6"><i>{{questions[currentQuiz].question}}</i>
+
+            <ul class="list-group" *ngFor="let quiz of questions[currentQuiz].answer">
+                <label>
+               <li class="list-group-item" appBackground [correctAnswer]="quiz.correct">
+                     <input type = "radio" name="option" (change)="checkAnswer(quiz.correct)" >
+                    {{quiz.option}}</li>
+                </label>
+            </ul>
+          
+       	</div>
+ 
+    	</div>
+   
+        
+    <div *ngIf="currentQuiz > 0 && currentQuiz < 10">
+        <p align="center"><input type = button id="btnLeft" class="btn btn-secondary" style="float: left;" value="Prev" (click)="prevQuextion()" ></p>
+        </div> 
+    
+   <div *ngIf="currentQuiz < 10" ><input type = button id="btnRight" class="btn btn-secondary"  value="Next" (click)="nextQuextion()" >
+   </div>
+   <br/>
+   <br/>
+    <div *ngIf="currentQuiz >9">
+    <button class="btn btn-success btn-block" (click)="showResult()">Show Result  </button>
+    <button class="btn btn--new" class="text-success" (click)="playAgain()" *ngIf="resultStatus !== 'Show Result'"></button> 
+    <div class="text-center" *ngIf="result">
+        Correct Answers: {{ correctAnswers }} | Inocrrect Answers: {{ incorrectAnswers }}
+      <br/><br/>
+      <p class="text-secondary">If you would like to retake the test  <input type="button" class="btn btn-info" style="text-align: center;" value="Try Again!" routerLink='/home' /></p>
+    </div>
+
+    </div>
+
+</div>
+
+
